@@ -12,7 +12,6 @@ import { useState } from 'react';
 import { CourseRatingDialog } from '../Dialog/CourseRatingDialog';
 import { useEffect } from 'react';
 import { RatingBar } from '../RatingBar/RatingBar';
-import StarRatingComponent from 'react-star-rating-component';
 const HomeCard = ({ content, isEnrolled, enrollmentContent }) => {
     const totalRatings = content?.course_ratings;
 
@@ -50,8 +49,7 @@ const HomeCard = ({ content, isEnrolled, enrollmentContent }) => {
                             <div className="flex items-center gap-1 mb-2">
                                 <div className="text-sm font-medium">{totalRatings.averageRate.toFixed(1)}</div>
                                 {/* <div className="text-[#F77321] flex gap-0.5"><i className="fa fa-star co-or" aria-hidden="true"></i><i className="fa fa-star co-or" aria-hidden="true"></i><i className="fa fa-star co-or" aria-hidden="true"></i><i className="fa fa-star co-or" aria-hidden="true"></i><i className="fa fa-star co-or" aria-hidden="true"></i></div> */}
-                                <StarRatingComponent name={`rating`} value={totalRatings.averageRate} editing={false}/>
-                                {/* <Rating readOnly value={totalRatings.averageRate} precision={0.5} size='small'></Rating> */}
+                                <Rating readOnly value={totalRatings.averageRate} precision={0.5} size='small'></Rating>
                                 {/* <Rating readOnly  /> */}
                                 <div className="text-xs text-[#5C5C5C]">({totalRatings.totalRatings})</div>
                             </div>
